@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="counter ≔ 0" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="counter"/>
+<org.eventb.core.invariant name=")" org.eventb.core.label="inv1" org.eventb.core.predicate="counter ∈ ℕ"/>
+<org.eventb.core.invariant name="*" org.eventb.core.label="inv2" org.eventb.core.predicate="counter ≥ 0 ∧ counter ≤ MAX"/>
+<org.eventb.core.seesContext name="," org.eventb.core.target="Counter_Ctx"/>
+<org.eventb.core.event name="1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="reset">
+<org.eventb.core.action name="'" org.eventb.core.assignment="counter ≔ 0" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="-" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="inc">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="counter &lt; MAX"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="counter ≔ counter + 1" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="dec">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="counter &gt; 0"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="counter ≔ counter − 1" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="add">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="num"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="num ∈ ℕ"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="num &gt; 0"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="counter + num ≤ MAX"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="counter ≔ counter + num" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="0" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="sub">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="num"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="num ∈ ℕ"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="num &gt; 0"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="counter − num ≥ 0"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="counter ≔ counter − num" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

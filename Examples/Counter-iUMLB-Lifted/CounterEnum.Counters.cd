@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:classdiagrams="http://soton.ac.uk/models/eventb/classdiagrams/2015" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_KdJQUP7uEeepU9tbRlvUbA" type="Classdiagrams" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_MHkKwP7uEeepU9tbRlvUbA" type="2003">
+    <children xmi:type="notation:DecorationNode" xmi:id="_MHnOEP7uEeepU9tbRlvUbA" type="5007"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_MHocMP7uEeepU9tbRlvUbA" type="7006">
+      <children xmi:type="notation:Node" xmi:id="_REZ4MP7uEeepU9tbRlvUbA" type="3022">
+        <element xmi:type="classdiagrams:ClassAttribute" href="CounterEnum.bum#http://soton.ac.uk/models/eventb/classdiagrams/2015::ClassAttribute::CounterEnum.Counters.Counters.counter"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_REZ4Mf7uEeepU9tbRlvUbA"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_MHocMf7uEeepU9tbRlvUbA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_MHocMv7uEeepU9tbRlvUbA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_MHocM_7uEeepU9tbRlvUbA" type="7007">
+      <children xmi:type="notation:Node" xmi:id="_HbGUQP7xEeepU9tbRlvUbA" type="3023">
+        <element xmi:type="classdiagrams:ClassMethod" href="CounterEnum.bum#http://soton.ac.uk/models/eventb/classdiagrams/2015::ClassMethod::CounterEnum.Counters.Counters._HbQFQP7xEeepU9tbRlvUbA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_HbGUQf7xEeepU9tbRlvUbA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_M28R4P7xEeepU9tbRlvUbA" type="3023">
+        <element xmi:type="classdiagrams:ClassMethod" href="CounterEnum.bum#http://soton.ac.uk/models/eventb/classdiagrams/2015::ClassMethod::CounterEnum.Counters.Counters._M2848P7xEeepU9tbRlvUbA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_M28R4f7xEeepU9tbRlvUbA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_L0gR4AJ9Eei_aKYw8_AeIw" type="3023">
+        <element xmi:type="classdiagrams:ClassMethod" href="CounterEnum.bum#http://soton.ac.uk/models/eventb/classdiagrams/2015::ClassMethod::CounterEnum.Counters.Counters._L0g48AJ9Eei_aKYw8_AeIw"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_L0gR4QJ9Eei_aKYw8_AeIw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_NdbXgAJ9Eei_aKYw8_AeIw" type="3023">
+        <element xmi:type="classdiagrams:ClassMethod" href="CounterEnum.bum#http://soton.ac.uk/models/eventb/classdiagrams/2015::ClassMethod::CounterEnum.Counters.Counters._Ndb-kAJ9Eei_aKYw8_AeIw"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_NdbXgQJ9Eei_aKYw8_AeIw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_xzoEsANSEeiIy8ugH0caRg" type="3023">
+        <element xmi:type="classdiagrams:ClassMethod" href="CounterEnum.bum#http://soton.ac.uk/models/eventb/classdiagrams/2015::ClassMethod::CounterEnum.Counters.Counters._xzpS0ANSEeiIy8ugH0caRg"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_xzoEsQNSEeiIy8ugH0caRg"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_MHocNP7uEeepU9tbRlvUbA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_MHocNf7uEeepU9tbRlvUbA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_MHpDQP7uEeepU9tbRlvUbA" type="7008">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_MHpDQf7uEeepU9tbRlvUbA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_MHpDQv7uEeepU9tbRlvUbA"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_MHkKwf7uEeepU9tbRlvUbA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_MHkKwv7uEeepU9tbRlvUbA" fontName="Noto Sans"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_MHkKw_7uEeepU9tbRlvUbA"/>
+    <element xmi:type="classdiagrams:Class" href="CounterEnum.bum#http://soton.ac.uk/models/eventb/classdiagrams/2015::Class::CounterEnum.Counters.Counters"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MHkKxP7uEeepU9tbRlvUbA" x="50" y="45"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_KdJQUf7uEeepU9tbRlvUbA"/>
+  <element xmi:type="classdiagrams:Classdiagram" href="CounterEnum.bum#http://soton.ac.uk/models/eventb/classdiagrams/2015::Classdiagram::CounterEnum.Counters"/>
+</notation:Diagram>

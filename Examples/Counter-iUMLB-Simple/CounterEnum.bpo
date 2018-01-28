@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="CounterSM_STATES" org.eventb.core.type="ℙ(CounterSM_STATES)"/>
+<org.eventb.core.poIdentifier name="CounterSM_started" org.eventb.core.type="CounterSM_STATES"/>
+<org.eventb.core.poIdentifier name="CounterSM_stopped" org.eventb.core.type="CounterSM_STATES"/>
+<org.eventb.core.poPredicate name="CounterSM_stoppee" org.eventb.core.predicate="CounterSM_stopped∈CounterSM_STATES" org.eventb.core.source="/Counter-iUMLB-Simple/CounterEnum_implicitContext.buc|org.eventb.core.contextFile#CounterEnum_implicitContext|org.eventb.core.axiom#_jl2nMQJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poPredicate name="CounterSM_stoppef" org.eventb.core.predicate="CounterSM_started∈CounterSM_STATES" org.eventb.core.source="/Counter-iUMLB-Simple/CounterEnum_implicitContext.buc|org.eventb.core.contextFile#CounterEnum_implicitContext|org.eventb.core.axiom#_jl2nMgJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poPredicate name="CounterSM_stoppeg" org.eventb.core.predicate="partition(CounterSM_STATES,{CounterSM_stopped},{CounterSM_started})" org.eventb.core.source="/Counter-iUMLB-Simple/CounterEnum_implicitContext.buc|org.eventb.core.contextFile#CounterEnum_implicitContext|org.eventb.core.axiom#_jl2nMwJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poIdentifier name="MAX" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicate name="CounterSM_stoppeh" org.eventb.core.predicate="MAX∈ℕ" org.eventb.core.source="/Counter-iUMLB-Simple/Counter_Ctx.buc|org.eventb.core.contextFile#Counter_Ctx|org.eventb.core.axiom#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="CounterSM" org.eventb.core.type="CounterSM_STATES"/>
+<org.eventb.core.poIdentifier name="counter" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicate name="CounterSN" org.eventb.core.predicate="counter∈ℕ" org.eventb.core.source="/Counter-iUMLB-Simple/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.invariant#)"/>
+<org.eventb.core.poPredicate name="CounterSO" org.eventb.core.predicate="counter≥0∧counter≤MAX" org.eventb.core.source="/Counter-iUMLB-Simple/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.invariant#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterEnum_implicitContexv" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="CounterSM'" org.eventb.core.type="CounterSM_STATES"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterEnum_implicitContexv" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#EVTIDENTCounterEnum_implicitContexv" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterEnum_implicitContexw" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterEnum_implicitContexw" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#EVTIDENTCounterEnum_implicitContexw" org.eventb.core.poStamp="1"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterEnum_implicitContexx" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterEnum_implicitContexx" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#EVTIDENTCounterEnum_implicitContexx" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="counter&lt;MAX" org.eventb.core.source="/Counter-iUMLB-Simple/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#-|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="CounterSM=CounterSM_started" org.eventb.core.source="/Counter-iUMLB-Simple/CounterEnum.bum|org.eventb.core.machineFile#CounterEnum|org.eventb.core.event#.|org.eventb.core.guard#_jlyVwQJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterEnum_implicitContexy" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterEnum_implicitContexy" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#EVTIDENTCounterEnum_implicitContexy" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="counter&gt;0" org.eventb.core.source="/Counter-iUMLB-Simple/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#.|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="CounterSM=CounterSM_started" org.eventb.core.source="/Counter-iUMLB-Simple/CounterEnum.bum|org.eventb.core.machineFile#CounterEnum|org.eventb.core.event#\/|org.eventb.core.guard#_jlyVwgJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterEnum_implicitContexz" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="num" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterEnum_implicitContexz" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#EVTIDENTCounterEnum_implicitContexz" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="num∈ℕ" org.eventb.core.source="/Counter-iUMLB-Simple/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#evt1|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="num&gt;0" org.eventb.core.source="/Counter-iUMLB-Simple/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#evt1|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="counter+num≤MAX" org.eventb.core.source="/Counter-iUMLB-Simple/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#evt1|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="CounterSM=CounterSM_started" org.eventb.core.source="/Counter-iUMLB-Simple/CounterEnum.bum|org.eventb.core.machineFile#CounterEnum|org.eventb.core.event#evt1|org.eventb.core.guard#_jly80AJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterEnum_implicitContex{" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="num" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterEnum_implicitContex{" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#EVTIDENTCounterEnum_implicitContex{" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="num∈ℕ" org.eventb.core.source="/Counter-iUMLB-Simple/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#evt2|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="num&gt;0" org.eventb.core.source="/Counter-iUMLB-Simple/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#evt2|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="counter − num≥0" org.eventb.core.source="/Counter-iUMLB-Simple/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#evt2|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="CounterSM=CounterSM_started" org.eventb.core.source="/Counter-iUMLB-Simple/CounterEnum.bum|org.eventb.core.machineFile#CounterEnum|org.eventb.core.event#evt2|org.eventb.core.guard#_jly80QJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterEnum_implicitContex|" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="CounterSM'" org.eventb.core.type="CounterSM_STATES"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterEnum_implicitContex|" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#EVTIDENTCounterEnum_implicitContex\|" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="CounterSM=CounterSM_stopped" org.eventb.core.source="/Counter-iUMLB-Simple/CounterEnum.bum|org.eventb.core.machineFile#CounterEnum|org.eventb.core.event#_9CrZsP4FEeejbOZEepPz2w|org.eventb.core.guard#_jlzj4AJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterEnum_implicitContex}" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="CounterSM'" org.eventb.core.type="CounterSM_STATES"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterEnum_implicitContex}" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#EVTIDENTCounterEnum_implicitContex}" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="CounterSM=CounterSM_started" org.eventb.core.source="/Counter-iUMLB-Simple/CounterEnum.bum|org.eventb.core.machineFile#CounterEnum|org.eventb.core.event#_9CsAwP4FEeejbOZEepPz2w|org.eventb.core.guard#_jlzj4gJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum.bpo|org.eventb.core.poFile#CounterEnum|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="CounterSM∈CounterSM_STATES" org.eventb.core.source="/Counter-iUMLB-Simple/CounterEnum.bum|org.eventb.core.machineFile#CounterEnum|org.eventb.core.invariant#_jl0K8QJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

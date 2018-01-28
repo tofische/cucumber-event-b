@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.constant name="'" org.eventb.core.identifier="MAX"/>
+<org.eventb.core.axiom name="(" org.eventb.core.label="axm1" org.eventb.core.predicate="MAX ∈ ℕ"/>
+<org.eventb.core.constant name="_Pl_ZcP7uEeepU9tbRlvUbB" org.eventb.core.identifier="NUM"/>
+<org.eventb.core.axiom name="_Pl_ZcP7uEeepU9tbRlvUbC" org.eventb.core.label="axm2" org.eventb.core.predicate="NUM ∈ ℕ"/>
+<org.eventb.core.constant name="_Pl_ZcP7uEeepU9tbRlvUbD" org.eventb.core.identifier="Counters"/>
+<org.eventb.core.axiom name="_Pl_ZcP7uEeepU9tbRlvUbE" org.eventb.core.label="axm3" org.eventb.core.predicate="Counters = 1‥NUM"/>
+</org.eventb.core.contextFile>

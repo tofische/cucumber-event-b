@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="CounterSM_STATES" org.eventb.core.type="ℙ(CounterSM_STATES)"/>
+<org.eventb.core.poIdentifier name="CounterSM_started" org.eventb.core.type="CounterSM_STATES"/>
+<org.eventb.core.poIdentifier name="CounterSM_stopped" org.eventb.core.type="CounterSM_STATES"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Counter-iUMLB-Simple/CounterEnum_implicitContext.bpo|org.eventb.core.poFile#CounterEnum_implicitContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="CounterSM_stopped∈CounterSM_STATES" org.eventb.core.source="/Counter-iUMLB-Simple/CounterEnum_implicitContext.buc|org.eventb.core.contextFile#CounterEnum_implicitContext|org.eventb.core.axiom#_jl2nMQJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="CounterSM_started∈CounterSM_STATES" org.eventb.core.source="/Counter-iUMLB-Simple/CounterEnum_implicitContext.buc|org.eventb.core.contextFile#CounterEnum_implicitContext|org.eventb.core.axiom#_jl2nMgJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(CounterSM_STATES,{CounterSM_stopped},{CounterSM_started})" org.eventb.core.source="/Counter-iUMLB-Simple/CounterEnum_implicitContext.buc|org.eventb.core.contextFile#CounterEnum_implicitContext|org.eventb.core.axiom#_jl2nMwJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+<org.eventb.core.prProof name="INITIALISATION/distinct_states_in_CounterSM/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p2">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p2" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="p1">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p4">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p5" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="MAX" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="{TRUE}={TRUE}∪({FALSE}∩{TRUE})"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="{TRUE}=({TRUE}∩{TRUE})∪({FALSE}∩{TRUE})"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="MAX∈ℕ"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="({TRUE}∩{TRUE})∩({FALSE}∩{TRUE})=(∅ ⦂ ℙ(BOOL))"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition({TRUE},{TRUE}∩{TRUE},{FALSE}∩{TRUE})"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="start/distinct_states_in_CounterSM/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition({TRUE},{CounterSM_stopped}∩{TRUE},{CounterSM_started}∩{TRUE}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6,p7"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p6,p7"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9,p10"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with CounterSM_stopped=TRUE" org.eventb.core.prHyps="p3">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p15"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p11" org.eventb.core.prInfHyps="p16"/>
+<org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p6,p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p17"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p16" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p18"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with FALSE=CounterSM_started" org.eventb.core.prHyps="p18">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p17" org.eventb.core.prInfHyps="p19"/>
+<org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="p5,p2,p3,p6,p9,p10,p11,p17,p18,p19">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p20">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p20" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p21">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9,p10"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p21" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="CounterSM_started" org.eventb.core.type="BOOL"/>
+<org.eventb.core.prIdent name="CounterSM_stopped" org.eventb.core.type="BOOL"/>
+<org.eventb.core.prIdent name="MAX" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="counter" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition({TRUE},{CounterSM_stopped}∩{TRUE},{CounterSM_started}∩{TRUE})"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="{TRUE}={TRUE}∪({FALSE}∩{TRUE})"/>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="counter∈ℕ"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="{TRUE}∩{TRUE}∩{CounterSM_started}=(∅ ⦂ ℙ(BOOL))"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="FALSE=CounterSM_started"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="{TRUE}=({CounterSM_stopped}∩{TRUE})∪({CounterSM_started}∩{TRUE})"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="({CounterSM_stopped}∩{TRUE})∩({CounterSM_started}∩{TRUE})=(∅ ⦂ ℙ(BOOL))"/>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="({FALSE}∩{TRUE})∩({TRUE}∩{TRUE})=(∅ ⦂ ℙ(BOOL))"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="{TRUE}={TRUE}∪({CounterSM_started}∩{TRUE})"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition({TRUE},{FALSE}∩{TRUE},{TRUE}∩{TRUE})"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="MAX∈ℕ"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="{TRUE}=({FALSE}∩{TRUE})∪({TRUE}∩{TRUE})"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="counter≥0"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="counter≤MAX"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="CounterSM_stopped=TRUE"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="{TRUE}=({FALSE}∩{TRUE})∪{TRUE}"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="{CounterSM_stopped}∩{TRUE}∩{CounterSM_started}=(∅ ⦂ ℙ(BOOL))"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="CounterSM_stopped∈BOOL"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="CounterSM_started∈BOOL"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="counter≥0∧counter≤MAX"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="{TRUE}=({TRUE}∩{TRUE})∪({CounterSM_started}∩{TRUE})"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="stop/distinct_states_in_CounterSM/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition({TRUE},{CounterSM_stopped}∩{TRUE},{CounterSM_started}∩{TRUE}))" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6,p7"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p6,p7"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9,p10"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with CounterSM_started=TRUE" org.eventb.core.prHyps="p3">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p15"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p11" org.eventb.core.prInfHyps="p16"/>
+<org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p6,p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p17"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p16" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p18"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with CounterSM_stopped=FALSE" org.eventb.core.prHyps="p18">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p17" org.eventb.core.prInfHyps="p19"/>
+<org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="p5,p2,p3,p6,p9,p10,p11,p17,p18,p19">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p20">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p20" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p21">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9,p10"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p21" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="CounterSM_started" org.eventb.core.type="BOOL"/>
+<org.eventb.core.prIdent name="CounterSM_stopped" org.eventb.core.type="BOOL"/>
+<org.eventb.core.prIdent name="MAX" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="counter" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition({TRUE},{CounterSM_stopped}∩{TRUE},{CounterSM_started}∩{TRUE})"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="{TRUE}={TRUE}∪({FALSE}∩{TRUE})"/>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="counter∈ℕ"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="CounterSM_started=TRUE"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="{TRUE}=({CounterSM_stopped}∩{TRUE})∪({TRUE}∩{TRUE})"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="{TRUE}=({TRUE}∩{TRUE})∪({FALSE}∩{TRUE})"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="{TRUE}=({CounterSM_stopped}∩{TRUE})∪{TRUE}"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="{TRUE}=({CounterSM_stopped}∩{TRUE})∪({CounterSM_started}∩{TRUE})"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="({CounterSM_stopped}∩{TRUE})∩({CounterSM_started}∩{TRUE})=(∅ ⦂ ℙ(BOOL))"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="{CounterSM_stopped}∩{TRUE}∩{TRUE}=(∅ ⦂ ℙ(BOOL))"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="MAX∈ℕ"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition({TRUE},{TRUE}∩{TRUE},{FALSE}∩{TRUE})"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="counter≥0"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="counter≤MAX"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="{TRUE}=({FALSE}∩{TRUE})∪{TRUE}"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="{CounterSM_stopped}∩{TRUE}∩{CounterSM_started}=(∅ ⦂ ℙ(BOOL))"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="CounterSM_stopped∈BOOL"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="CounterSM_started∈BOOL"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="counter≥0∧counter≤MAX"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="CounterSM_stopped=FALSE"/>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="({TRUE}∩{TRUE})∩({FALSE}∩{TRUE})=(∅ ⦂ ℙ(BOOL))"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+</org.eventb.core.prFile>

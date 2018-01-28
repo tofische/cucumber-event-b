@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="Counters" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="MAX" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="NUM" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poPredicate name="Countert" org.eventb.core.predicate="MAX∈ℕ" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter_Ctx.buc|org.eventb.core.contextFile#Counter_Ctx|org.eventb.core.axiom#("/>
+<org.eventb.core.poPredicate name="Counteru" org.eventb.core.predicate="NUM∈ℕ" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter_Ctx.buc|org.eventb.core.contextFile#Counter_Ctx|org.eventb.core.axiom#_Pl_ZcP7uEeepU9tbRlvUbC"/>
+<org.eventb.core.poPredicate name="Counterv" org.eventb.core.predicate="Counters=1 ‥ NUM" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter_Ctx.buc|org.eventb.core.contextFile#Counter_Ctx|org.eventb.core.axiom#_Pl_ZcP7uEeepU9tbRlvUbE"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="CounterSM_started" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="CounterSM_stopped" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="counter" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poPredicate name="CounterSM_stoppee" org.eventb.core.predicate="counter∈Counters → ℕ" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.invariant#_eRCZYQNTEeiIy8ugH0caRg"/>
+<org.eventb.core.poPredicate name="CounterSM_stoppef" org.eventb.core.predicate="∀this_Counters⦂ℤ·this_Counters∈Counters⇒counter(this_Counters)≥0∧counter(this_Counters)≤MAX" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.invariant#_eRCZYgNTEeiIy8ugH0caRg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/typeof_CounterSM_stopped/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTALLHYPCounterSM_stoppee"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Counters⊆Counters" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4QJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#_SSjQ4P7vEeepU9tbRlvUbB"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4QJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poSequent#INITIALISATION\/typeof_CounterSM_stopped\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/typeof_CounterSM_started/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTALLHYPCounterSM_stoppee"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(ℤ))⊆Counters" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4gJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#_SSjQ4P7vEeepU9tbRlvUbB"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4gJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poSequent#INITIALISATION\/typeof_CounterSM_started\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/distinct_states_in_CounterSM/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTALLHYPCounterSM_stoppee"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="partition(Counters,Counters,∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4wJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#_SSjQ4P7vEeepU9tbRlvUbB"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4wJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poSequent#INITIALISATION\/distinct_states_in_CounterSM\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterSM_stoppee" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="CounterSM_started'" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="CounterSM_stopped'" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterSM_stoppee" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTIDENTCounterSM_stoppee" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterSM_stoppef" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="this_Counters" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterSM_stoppef" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTIDENTCounterSM_stoppef" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="this_Counters∈Counters" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#_tshscANSEeiIy8ugH0caRg|org.eventb.core.guard#_eRByUANTEeiIy8ugH0caRg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterSM_stoppeg" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="this_Counters" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterSM_stoppeg" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTIDENTCounterSM_stoppeg" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="this_Counters∈Counters" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#_Kvs4kP7xEeepU9tbRlvUbA|org.eventb.core.guard#_eQ0-AQNTEeiIy8ugH0caRg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="counter(this_Counters)&lt;MAX" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#_Kvs4kP7xEeepU9tbRlvUbA|org.eventb.core.guard#_eQ0-AgNTEeiIy8ugH0caRg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="this_Counters∈CounterSM_started" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#_SSjQ4P7vEeepU9tbRlvUbC|org.eventb.core.guard#_kYRipAJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterSM_stoppeh" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="this_Counters" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterSM_stoppeh" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTIDENTCounterSM_stoppeh" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="this_Counters∈Counters" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#_NtrFkP7xEeepU9tbRlvUbA|org.eventb.core.guard#_eQ1lEQNTEeiIy8ugH0caRg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="counter(this_Counters)&gt;0" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#_NtrFkP7xEeepU9tbRlvUbA|org.eventb.core.guard#_eQ1lEgNTEeiIy8ugH0caRg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="this_Counters∈CounterSM_started" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#_SSjQ4P7vEeepU9tbRlvUbD|org.eventb.core.guard#_kYRipQJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterSM_stoppei" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="this_Counters" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="num" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterSM_stoppei" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTIDENTCounterSM_stoppei" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="this_Counters∈Counters" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#_Ud93gAJ8Eei_aKYw8_AeIw|org.eventb.core.guard#_eQ9g4ANTEeiIy8ugH0caRg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="num∈ℕ" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#_Ud93gAJ8Eei_aKYw8_AeIw|org.eventb.core.guard#_eQ9g4QNTEeiIy8ugH0caRg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="num&gt;0" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#_Ud93gAJ8Eei_aKYw8_AeIw|org.eventb.core.guard#_eQ9g4gNTEeiIy8ugH0caRg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="counter(this_Counters)+num≤MAX" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#_Ud93gAJ8Eei_aKYw8_AeIw|org.eventb.core.guard#_eQ9g4wNTEeiIy8ugH0caRg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="this_Counters∈CounterSM_started" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#evt1|org.eventb.core.guard#_kYSJsAJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterSM_stoppej" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="this_Counters" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="num" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterSM_stoppej" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTIDENTCounterSM_stoppej" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="this_Counters∈Counters" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#_Ud-ekAJ8Eei_aKYw8_AeIw|org.eventb.core.guard#_eRAkMANTEeiIy8ugH0caRg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="num∈ℕ" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#_Ud-ekAJ8Eei_aKYw8_AeIw|org.eventb.core.guard#_eRAkMQNTEeiIy8ugH0caRg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="num&gt;0" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#_Ud-ekAJ8Eei_aKYw8_AeIw|org.eventb.core.guard#_eRAkMgNTEeiIy8ugH0caRg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="counter(this_Counters) − num≥0" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#_Ud-ekAJ8Eei_aKYw8_AeIw|org.eventb.core.guard#_eRAkMwNTEeiIy8ugH0caRg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="this_Counters∈CounterSM_started" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#evt2|org.eventb.core.guard#_kYSJsQJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="start/typeof_CounterSM_stopped/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTALLHYPCounterSM_stoppek"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="CounterSM_stopped ∖ {this_Counters}⊆Counters" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4QJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#_0p6V0P-jEeeUZNsaZcKOAw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4QJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poSequent#start\/typeof_CounterSM_stopped\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="start/typeof_CounterSM_started/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTALLHYPCounterSM_stoppek"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="CounterSM_started∪{this_Counters}⊆Counters" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4gJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#_0p6V0P-jEeeUZNsaZcKOAw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4gJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poSequent#start\/typeof_CounterSM_started\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="start/distinct_states_in_CounterSM/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTALLHYPCounterSM_stoppek"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="partition(Counters,CounterSM_stopped ∖ {this_Counters},CounterSM_started∪{this_Counters})" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4wJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#_0p6V0P-jEeeUZNsaZcKOAw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4wJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poSequent#start\/distinct_states_in_CounterSM\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterSM_stoppek" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="CounterSM_started'" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="CounterSM_stopped'" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="this_Counters" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterSM_stoppek" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTIDENTCounterSM_stoppek" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="this_Counters∈CounterSM_stopped" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#_0p6V0P-jEeeUZNsaZcKOAw|org.eventb.core.guard#_kYTX0QJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="stop/typeof_CounterSM_stopped/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTALLHYPCounterSM_stoppel"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="CounterSM_stopped∪{this_Counters}⊆Counters" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4QJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#_0p684P-jEeeUZNsaZcKOAw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4QJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poSequent#stop\/typeof_CounterSM_stopped\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="stop/typeof_CounterSM_started/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTALLHYPCounterSM_stoppel"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="CounterSM_started ∖ {this_Counters}⊆Counters" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4gJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#_0p684P-jEeeUZNsaZcKOAw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4gJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poSequent#stop\/typeof_CounterSM_started\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="stop/distinct_states_in_CounterSM/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTALLHYPCounterSM_stoppel"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="partition(Counters,CounterSM_stopped∪{this_Counters},CounterSM_started ∖ {this_Counters})" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4wJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#_0p684P-jEeeUZNsaZcKOAw"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4wJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poSequent#stop\/distinct_states_in_CounterSM\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTCounterSM_stoppel" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="CounterSM_started'" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="CounterSM_stopped'" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="this_Counters" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPCounterSM_stoppel" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#EVTIDENTCounterSM_stoppel" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="this_Counters∈CounterSM_started" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.event#_0p684P-jEeeUZNsaZcKOAw|org.eventb.core.guard#_kYTX1QJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/CounterVars.bpo|org.eventb.core.poFile#CounterVars|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="CounterSM_stopped⊆Counters" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4QJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="CounterSM_started⊆Counters" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4gJ9Eei_aKYw8_AeIw"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(Counters,CounterSM_stopped,CounterSM_started)" org.eventb.core.source="/Counter-iUMLB-Lifted/CounterVars.bum|org.eventb.core.machineFile#CounterVars|org.eventb.core.invariant#_kYT-4wJ9Eei_aKYw8_AeIw"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

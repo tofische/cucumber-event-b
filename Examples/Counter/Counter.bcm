@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+<org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/Counter/Counter_Ctx.bcc" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.seesContext#,"/>
+<org.eventb.core.scInternalContext name="Counter_Ctx">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="MAX∈ℕ" org.eventb.core.source="/Counter/Counter_Ctx.buc|org.eventb.core.contextFile#Counter_Ctx|org.eventb.core.axiom#(" org.eventb.core.theorem="false"/>
+<org.eventb.core.scConstant name="MAX" org.eventb.core.source="/Counter/Counter_Ctx.buc|org.eventb.core.contextFile#Counter_Ctx|org.eventb.core.constant#'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInvariant name="Counter_Cty" org.eventb.core.label="inv1" org.eventb.core.predicate="counter∈ℕ" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.invariant#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="Counter_Ctz" org.eventb.core.label="inv2" org.eventb.core.predicate="counter≥0∧counter≤MAX" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.invariant#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scVariable name="counter" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.variable#(" org.eventb.core.type="ℤ"/>
+<org.eventb.core.scEvent name="Counter_Ct{" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#'">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="counter ≔ 0" org.eventb.core.label="act1" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#'|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="Counter_Ct|" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="reset" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#1">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="counter ≔ 0" org.eventb.core.label="act1" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#1|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="Counter_Ct}" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="inc" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#-">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="counter&lt;MAX" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#-|org.eventb.core.guard#'" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAction name="(" org.eventb.core.assignment="counter ≔ counter+1" org.eventb.core.label="act1" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#-|org.eventb.core.action#("/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="Counter_Ct~" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="dec" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#.">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="counter&gt;0" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#.|org.eventb.core.guard#'" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAction name="(" org.eventb.core.assignment="counter ≔ counter − 1" org.eventb.core.label="act1" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#.|org.eventb.core.action#("/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="Counter_Cu'" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="add" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#\/">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="num∈ℕ" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#\/|org.eventb.core.guard#(" org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="num&gt;0" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#\/|org.eventb.core.guard#+" org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="counter+num≤MAX" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#\/|org.eventb.core.guard#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scParameter name="num" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#\/|org.eventb.core.parameter#'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.scAction name="nun" org.eventb.core.assignment="counter ≔ counter+num" org.eventb.core.label="act1" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#\/|org.eventb.core.action#*"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="Counter_Cu(" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="sub" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#0">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="num∈ℕ" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#0|org.eventb.core.guard#(" org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="num&gt;0" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#0|org.eventb.core.guard#+" org.eventb.core.theorem="false"/>
+<org.eventb.core.scGuard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="counter − num≥0" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#0|org.eventb.core.guard#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scParameter name="num" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#0|org.eventb.core.parameter#'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.scAction name="nun" org.eventb.core.assignment="counter ≔ counter − num" org.eventb.core.label="act1" org.eventb.core.source="/Counter/Counter.bum|org.eventb.core.machineFile#Counter|org.eventb.core.event#0|org.eventb.core.action#*"/>
+</org.eventb.core.scEvent>
+</org.eventb.core.scMachineFile>

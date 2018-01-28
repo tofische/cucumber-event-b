@@ -1,2 +1,77 @@
-# cucumber-event-b
 Cucumber for Event-B
+====================
+
+The Cucumber-Event-B connector allows the Cucumber to execute Gherkin scenarios on an Event-B model and provides also a basic iUML-B support
+
+It is based on the Cucumber-JVM and uses the ProB 2 in order to execute the Event-B model.
+
+
+Setup Cucumber for Event-B
+--------------------
+
+* Ensure that Java and Groovy (tested with Java 1.8.0 and Groovy 2.4.5) are installed.
+
+* Install Cucumber-JVM.
+  See <https://cucumber.io/> for the installation instructions and further information about the Cucumber-JVM. You'll need following jar files (tested with denoted versions):
+  * gherkin-2.12.2.jar: Gherkin
+  * gherkin-jvm-deps-1.0.3.jar: Gherkin JVM dependencies
+  * cucumber-core-1.2.5.jar: Cucumber core
+  * cucumber-groovy-1.2.5.jar: Cucumber Groovy backend
+  * cucumber-jvm-deps-1.0.5.jar: Cucumber JVM dependencies
+  * cucumber-html-0.2.6.jar: Cucumber plugin HTML formatter (optional)
+
+  Ensure that there are no two backends in the classpath.
+
+
+* Download ProB-2 (there is no installation package available yet).
+  Clone the git repository from <https://github.com/bendisposto/prob2> and build it according to the provided setup guide. Extract the built distribution into an arbitrary directory.
+  See <https://www3.hhu.de/stups/prob/index.php/ProB_Java_API> for further information about the ProB-2.
+
+
+Prepare your Event-B project
+--------------------
+
+* Download the `cucumber.sh` file from this site and put it into the root directory of your Event-B project.
+  If necessary, edit this file in order to update path references. We assume following environment variables:
+  * `CUCUMBER_JVM_HOME` pointing to a directory with downloaded Cucumber-JVM.
+  * `PROB_HOME` pointing to a directory with extracted ProB-2 distribution (shall contain a subdirectory `lib`).
+
+  Edit this file also if you want to use some cucumber-jvm plugins (e.g. add `--plugin html:output` to produce an HTML report).
+
+  Make `cucumber.sh` executable.
+
+* Create the directory `features` in your Event-B project and put all `.feature` files containing your Gherkin scenarios there. Look at provided examples!
+
+* Download the `steps.groovy` file from this site and put it into the directory `features` or any subdirectory thereof.
+  You are not required to edit or even understand this file. Groovy knowledge is not necessary in order to use Cucumber for Event-B!
+
+  _The location `features/step_definitions` of the step definitions files is a default convention in Cucumber. However, in case of Cucumber-for-Event-B the `steps.groovy` file is generic, so you can also put it outside of your Event-B project. If you decide to do so, you have to update the path (stated after the `--glue` switch) in the `cucumber.sh` file accordingly._
+
+* The feature files can either directly use provided low-level Event-B-like step definitions or your project may define high-level domain-specific step definitions. In this case put also any additional step definitions files here. Look at provided examples!
+
+* Adjust the Logback logger configuration.
+
+
+Provided examples
+--------------------
+Several [examples](./Examples.md) are provided to demonstrate main features of Cucumber for Event-B.
+
+
+Language description
+--------------------
+See [language description](./Language.md) for the description of available step definitions.
+
+
+Run your tests
+--------------------
+
+* Select the machine to be tested (usually the last refinement). Non-deterministic machine behaviour leads to non-reproducible tests, so you shall further refine the model in such case. Also abstract constants lead to non-reproducible tests, so you shall provide data either in the model refinement or in the particular test case (feature file).
+
+  Note, that the Event-B machine to be loaded is not specified within the feature file, rather given as a command line parameter.
+
+  _You can also load an Event-B context, but it makes little sense, as there is no behaviour to be tested._
+
+* Execute `cucumber.sh <Event-B Machine file>.bum` and enjoy!
+
+  _The ProB always loads statically checked machine or context (*.bcm or *.bcc even if *.bum or *.buc has been specified), so make sure that the Rodin build succeeded._
+

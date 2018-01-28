@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="Counters" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="MAX" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="NUM" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Counter-iUMLB-Lifted/Counter_Ctx.bpo|org.eventb.core.poFile#Counter_Ctx|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="MAX∈ℕ" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter_Ctx.buc|org.eventb.core.contextFile#Counter_Ctx|org.eventb.core.axiom#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="NUM∈ℕ" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter_Ctx.buc|org.eventb.core.contextFile#Counter_Ctx|org.eventb.core.axiom#_Pl_ZcP7uEeepU9tbRlvUbC"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Counters=1 ‥ NUM" org.eventb.core.source="/Counter-iUMLB-Lifted/Counter_Ctx.buc|org.eventb.core.contextFile#Counter_Ctx|org.eventb.core.axiom#_Pl_ZcP7uEeepU9tbRlvUbE"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
