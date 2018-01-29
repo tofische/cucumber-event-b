@@ -51,6 +51,39 @@ Then(~/^formula ${quoted} is (FALSE|TRUE)$/) {
 }
 
 
+// iUML-B Class Diagrams
+
+// Preset the given class instance for subsequent steps.
+Given(~/^class instance ${quoted}?$/) {
+    String classId ->
+    givenClassId = classId
+}
+
+// Call the given method (optionally with the given parameters constraints) of the preset or given classs instance.
+When(~/^call method ${quoted}(?: with ${quoted})?(?: for class instance ${quoted})?$/) {
+    String methodName, String formula, String classId ->   // Parameter formula and classId are optional
+    callMethod(methodName, classId, formula)
+}
+
+// Check, if the given method (optionally with the given parameters constraints) of the preset or given classs instance is enabled.
+Then(~/^method ${quoted}(?: with ${quoted})? is enabled(?: for class instance ${quoted})?$/) {
+    String methodName, String formula, String classId ->   // Parameter formula and classId are optional
+    assert true == isMethodEnabled(methodName, classId, formula)
+}
+
+// Check, if the given method (optionally with the given parameters constraints) of the preset or given classs instance is disabled.
+Then(~/^method ${quoted}(?: with ${quoted})? is disabled(?: for class instance ${quoted})?$/) {
+    String methodName, String formula, String classId ->   // Parameter formula and classId are optional
+    assert true == isMethodDisabled(methodName, classId, formula)
+}
+
+// Check, if the given attribute of the given class instance has or has not the given value.
+Then(~/^attribute ${quoted}(?: of class instance ${quoted})? is( not)? ${quoted}$/) {
+    String attrName, String classId, String not, String value ->   // Parameters classId and not are optional
+    assert true == isAttribute(classId, attrName, value, not != null)
+}
+
+
 // iUML-B State Machines
 
 // Preset the given state machine for subsequent steps.
@@ -81,39 +114,6 @@ Then(~/^transition ${quoted}(?: with ${quoted})? is disabled(?: for state machin
 Then(~/^(?:state machine ${quoted} )?is( not)? in state ${quoted}$/) {
     String smId, String not, String stateName ->   // Parameters smId and not are optional
     assert true == isInState(smId, stateName, not != null)
-}
-
-
-// iUML-B Class Diagrams
-
-// Preset the given class instance for subsequent steps.
-Given(~/^class ${quoted}?$/) {
-    String classId ->
-    givenClassId = classId
-}
-
-// Call the given method (optionally with the given parameters constraints) of the preset or given classs instance.
-When(~/^call method ${quoted}(?: with ${quoted})?(?: for class instance ${quoted})?$/) {
-    String methodName, String formula, String classId ->   // Parameter formula and classId are optional
-    callMethod(methodName, classId, formula)
-}
-
-// Check, if the given method (optionally with the given parameters constraints) of the preset or given classs instance is enabled.
-Then(~/^method ${quoted}(?: with ${quoted})? is enabled(?: for class instance ${quoted})?$/) {
-    String methodName, String formula, String classId ->   // Parameter formula and classId are optional
-    assert true == isMethodEnabled(methodName, classId, formula)
-}
-
-// Check, if the given method (optionally with the given parameters constraints) of the preset or given classs instance is disabled.
-Then(~/^method ${quoted}(?: with ${quoted})? is disabled(?: for class instance ${quoted})?$/) {
-    String methodName, String formula, String classId ->   // Parameter formula and classId are optional
-    assert true == isMethodDisabled(methodName, classId, formula)
-}
-
-// Check, if the given attribute of the given class instance has or has not the given value.
-Then(~/^attribute ${quoted}(?: of class instance ${quoted})? is( not)? ${quoted}$/) {
-    String attrName, String classId, String not, String value ->   // Parameters classId and not are optional
-    assert true == isAttribute(classId, attrName, value, not != null)
 }
 
 
@@ -190,8 +190,33 @@ public class World {
     def smNodes = [:]
     def machineNode = iumlb_load()
 
-    String givenSmId = null
     String givenClassId = null
+    String givenSmId = null
+
+    void callMethod(methodName, classId, String formula = null) {
+        def (className, classInst) = getClassInstance(classId)
+        String selfName = getClassSelfName(className, classInst)
+        fireEvent(methodName, mergeFormulas("${selfName} = ${classInst}", formula))
+    }
+
+    boolean isMethodEnabled(methodName, classId, String formula = null) {
+        def (className, classInst) = getClassInstance(classId)
+        String selfName = getClassSelfName(className, classInst)
+        return isEventEnabled(methodName, mergeFormulas("${selfName} = ${classInst}", formula))
+    }
+
+    boolean isMethodDisabled(methodName, classId, String formula = null) {
+        def (className, classInst) = getClassInstance(classId)
+        String selfName = getClassSelfName(className, classInst)
+        return isEventDisabled(methodName, mergeFormulas("${selfName} = ${classInst}", formula))
+    }
+
+    boolean isAttribute(String classId, String attrName, String value, boolean not) {
+        def (className, classInst) = getClassInstance(classId)
+        String selfName = getClassSelfName(className, classInst)
+        String ref = not ? "FALSE" : "TRUE"
+        return isFormula("${attrName}(${classInst}) = ${value}", ref)
+    }
 
     void triggerTransition(transName, smId, String formula = null) {
         def (smName, smInst) = getStateMachine(smId)
@@ -248,31 +273,6 @@ public class World {
                 assert false: "Unsupported translation ${tr} for state machine ${smName}"
                 break;
         }
-    }
-
-    void callMethod(methodName, classId, String formula = null) {
-        def (className, classInst) = getClassInstance(classId)
-        String selfName = getClassSelfName(className, classInst)
-        fireEvent(methodName, mergeFormulas("${selfName} = ${classInst}", formula))
-    }
-
-    boolean isMethodEnabled(methodName, classId, String formula = null) {
-        def (className, classInst) = getClassInstance(classId)
-        String selfName = getClassSelfName(className, classInst)
-        return isEventEnabled(methodName, mergeFormulas("${selfName} = ${classInst}", formula))
-    }
-
-    boolean isMethodDisabled(methodName, classId, String formula = null) {
-        def (className, classInst) = getClassInstance(classId)
-        String selfName = getClassSelfName(className, classInst)
-        return isEventDisabled(methodName, mergeFormulas("${selfName} = ${classInst}", formula))
-    }
-
-    boolean isAttribute(String classId, String attrName, String value, boolean not) {
-        def (className, classInst) = getClassInstance(classId)
-        String selfName = getClassSelfName(className, classInst)
-        String ref = not ? "FALSE" : "TRUE"
-        return isFormula("${attrName}(${classInst}) = ${value}", ref)
     }
 
     // Helper methods

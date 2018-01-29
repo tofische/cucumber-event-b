@@ -6,7 +6,7 @@ Feature: Counter
   Background:
     Given machine with "MAX = 1 & NUM = 2"
     And state machine "CounterSM:1"
-    And class "Counters:1"
+    And class instance "Counters:1"
 
 
   Scenario: Intial value
