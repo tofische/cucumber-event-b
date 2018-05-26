@@ -9,9 +9,8 @@ Event-B
 
   `Given machine with "«Formula»"`
 
-  `Given machine with`
-    `| name | value |`
-    `| ...  |  ...  |`
+  `Given machine with`\
+  `| name | value |`
 
   Setup constants (optionally with the given constants constraints) and initialize the machine.
 
