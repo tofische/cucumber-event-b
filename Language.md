@@ -9,6 +9,10 @@ Event-B
 
   `Given machine with "«Formula»"`
 
+  `Given machine with`
+    `| name | value |`
+    `| ...  |  ...  |`
+
   Setup constants (optionally with the given constants constraints) and initialize the machine.
 
   Available as _`setupConstantsInitialiseMachine(String formula)`_ method (parameter `formula` is optional).

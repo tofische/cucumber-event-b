@@ -1,12 +1,10 @@
+#!/bin/bash
 cd Counter
-./cucumber.sh Counter.bum
+./run-all.sh
 cd ..
 cd Counter-iUMLB-Simple
-./cucumber.sh CounterEnum.bum
-./cucumber.sh CounterVars.bum
+./run-all.sh
 cd ..
 cd Counter-iUMLB-Lifted
-./cucumber.sh CounterEnum.bum
-./cucumber.sh CounterVars.bum
+./run-all.sh
 cd ..
-

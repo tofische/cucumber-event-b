@@ -26,6 +26,11 @@ Given(~/^machine(?: with ${quoted})?$/) {
     setupConstantsInitialiseMachine(formula)
 }
 
+Given(~/^machine with$/) { DataTable table ->
+    String formula = table.asMap(String, String).collect{it.key + "=" + it.value}.join(" & ")
+    setupConstantsInitialiseMachine(formula)
+}
+
 // Fire the given event (optionally with the given parameters constraints).
 When(~/^fire event ${quoted}(?: with ${quoted})?$/) {
     String eventName, String formula ->   // Parameter formula is optional
