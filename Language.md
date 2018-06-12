@@ -10,7 +10,9 @@ Event-B
   `Given machine with "«Formula»"`
 
   `Given machine with`\
-  `| name | value |`
+    `"""`\
+      `«Formula»`\
+    `"""`
 
   Setup constants (optionally with the given constants constraints) and initialize the machine.
 
@@ -23,6 +25,15 @@ Event-B
   Fire the given event (optionally with the given parameters constraints).
 
   Available as _`fireEvent(String eventName, String formula)`_ method (parameter `formula` is optional).
+
+* `When fire event "«Event-Name»" with`\
+    `| name-1 | name-2 | ... |`\
+    `| val-11 | val-12 | ... |`\
+    `| val-21 | val-22 | ... |`
+
+  Fire the given event multiple times with the given parameters constraints (one data table row for each invocation).
+
+  Available as _`fireEvents(String eventName, List<Map<String, String>> maps)`_ method.
 
 * `Then event "«Event-Name»" is enabled`
 

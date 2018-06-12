@@ -26,8 +26,8 @@ Given(~/^machine(?: with ${quoted})?$/) {
     setupConstantsInitialiseMachine(formula)
 }
 
-Given(~/^machine with$/) { DataTable table ->
-    String formula = table.asMap(String, String).collect{it.key + "=" + it.value}.join(" & ")
+Given(~/^machine with$/) {
+    String formula ->
     setupConstantsInitialiseMachine(formula)
 }
 
@@ -35,6 +35,11 @@ Given(~/^machine with$/) { DataTable table ->
 When(~/^fire event ${quoted}(?: with ${quoted})?$/) {
     String eventName, String formula ->   // Parameter formula is optional
     fireEvent(eventName, formula)
+}
+
+When(~/^fire event ${quoted} with$/) {
+    DataTable table ->
+    fireEvents(eventName, table.asMaps(String, String))
 }
 
 // Check if the given event (optionally with the given parameters constraints) is enabled.
@@ -158,6 +163,13 @@ public class World {
         state = trans.getDestination()
     }
 
+    void fireEvents(String eventName, List<Map<String, String>> maps) {
+        for (map in maps) {
+            String formula = map.collect{it.key + "=" + it.value}.join(" & ")
+            fireEvent(eventName, formula)
+        }
+    }
+
     boolean isEventEnabled(String eventName, String formula = null) {
         Transition trans = findUniqueTransition(eventName, formula)
         return trans != null
@@ -189,7 +201,7 @@ public class World {
     private String mergeFormulas(String formula1, String formula2) {
         return formula2 != null ? "(${formula1}) & (${formula2})" : formula1
     }
-    
+
     // iUML-B
     def cdNodes = [:]
     def smNodes = [:]

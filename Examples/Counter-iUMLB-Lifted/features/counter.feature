@@ -6,8 +6,9 @@ Feature: Counter
 
   Background:
     Given machine with
-      | MAX | 1 |
-      | NUM | 2 |
+      """
+        MAX=1 & NUM=2
+      """
     And state machine "CounterSM:1"
     And class instance "Counters:1"
 
