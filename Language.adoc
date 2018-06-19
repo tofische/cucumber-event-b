@@ -3,6 +3,8 @@
 Your features may use the following step definitions (you may choose to use single or double quotes).
 The logic of the particular step is also available as a method for the composition in the domain specific steps.
 
+_Note: All steps may optionally end with the comment delimited by the whitespace and '#' characters._
+
 
 == Event-B
 
@@ -39,7 +41,16 @@ When fire event "«Event-Name»" with "«Formula»"
 Available as `fireEvent(String eventName, String formula)` method (parameter `formula` is optional).
 
 
-* Fire the given event multiple times with the given parameters constraints (one data table row for each invocation).
+* Fire the given event multiple times with all given parameters constraints (one value from the list for each invocation).
++
+----
+Then fire event "«Event-Name»" with "«Attr-Name»"="«Value-List»"
+----
++
+Available as `fireEvents(String eventName, String attrName, List<String> values)` method.
+
+
+* Fire the given event multiple times with all given parameters constraints (one data table row for each invocation).
 +
 ----
 When fire event "«Event-Name»" with
@@ -54,40 +65,153 @@ Available as `fireEvents(String eventName, List<Map<String, String>> maps)` meth
 * Check if the given event (optionally with the given parameters constraints) is enabled.
 +
 ----
-Then event "«Event-Name»" is enabled
+Then is enabled event "«Event-Name»"
 ----
 +
 ----
-Then event "«Event-Name»" with "«Formula»" is enabled
+Then is enabled event "«Event-Name»" with "«Formula»"
 ----
 +
 Available as `isEventEnabled(String eventName, String formula)` method (parameter `formula` is optional).
 
 
+* Check if the given event is enabled with all given parameters constraints (one value from the list for each check).
++
+----
+Then is enabled event "«Event-Name»" with "«Attr-Name»"="«Value-List»"
+----
++
+Available as `areEventsEnabled(String eventName, String attrName, List<String> values)` method.
+
+
 * Check if the given event (optionally with the given parameters constraints) is disabled.
 +
 ----
-Then event "«Event-Name»" is disabled
+Then is disabled event "«Event-Name»"
 ----
 +
 ----
-Then event "«Event-Name»" with "«Formula»" is disabled
+Then is disabled event "«Event-Name»" with "«Formula»"
 ----
 +
 Available as `isEventDisabled(String eventName, String formula)` method (parameter `formula` is optional).
 
 
+* Check if the given event is disabled with all given parameters constraints (one value from the list for each check).
++
+----
+Then is disabled event "«Event-Name»" with "«Attr-Name»"="«Value-List»"
+----
++
+Available as `areEventsDisabled(String eventName, String attrName, List<String> values)` method.
+
+
 * Check if the given formula evaluates to the given value.
 +
 ----
-Then formula "«Formula»" is TRUE
+Then is TRUE formula "«Formula»"
 ----
 +
 ----
-Then formula "«Formula»" is FALSE
+Then is FALSE formula "«Formula»"
 ----
 +
 Available as `isFormula(String formula, String value)` method.
+
+
+== iUML-B Class Diagrams
+
+The class instance identification is the class name followed by the instance, separated by the colon (e.g. `ClassName:Instance`).
+
+* Preset the given class instance for subsequent steps.
++
+----
+Given class instance "«Class»"
+----
+
+
+* Call the given method (optionally with the given parameters constraints) of the preset or given classs instance.
++
+----
+When call method "«Method-Name»"
+----
++
+----
+When call method "«Method-Name»" with "«Formula»"
+----
++
+----
+When call method "«Method-Name»" for class instance "«Class»"
+----
++
+----
+When call method "«Method-Name»" for class instance "«Class»" with "«Formula»"
+----
++
+Available as `callMethod(methodName, classId, formula)` method (parameters `classId` and `formula` are optional)
+
+
+* Check, if the given method (optionally with the given parameters constraints) of the preset or given classs instance is enabled.
++
+----
+Then is enabled method "«Method-Name»"
+----
++
+----
+Then is enabled method "«Method-Name»" with "«Formula»"
+----
++
+----
+Then is enabled method "«Method-Name»" for class instance "«Class»"
+----
++
+----
+Then is enabled method "«Method-Name»" for class instance "«Class»" with "«Formula»"
+----
++
+Available as `isMethodEnabled(methodName, classId, formula)` method (parameters `classId` and `formula` are optional).
+
+
+* Check, if the given method (optionally with the given parameters constraints) of the preset or given classs instance is disabled.
++
+----
+Then is disabled method "«Method-Name»"
+----
++
+----
+Then is disabled method "«Method-Name»" with "«Formula»"
+----
++
+----
+Then is disabled method "«Method-Name»" for class instance "«Class»"
+----
++
+----
+Then is disabled method "«Method-Name»" for class instance "«Class»" with "«Formula»"
+----
++
+Available as `isMethodDisabled(methodName, classId, formula)` method (parameters `classId` and `formula` are optional).
+
+
+* Check, if the given attribute of the preset or given class instance has or has not the given value.
++
+----
+Then attribute "«Attr-Name»" is "«Value»"
+----
++
+----
+Then attribute "«Attr-Name»" is not "«Value»"
+----
++
+----
+Then attribute "«Attr-Name»" for class instance "«Class»" is "«Value»"
+----
++
+----
+Then attribute "«Attr-Name»" for class instance "«Class»" is not "«Value»"
+----
++
+Available as `isAttribute(String classId, String attrName, String value, boolean not)` method (parameters `classId` and `not` are optional).
 
 
 == iUML-B State Machines (both enumeration and variables translation)
@@ -115,7 +239,7 @@ When trigger transition "«Trans-Name»" for state machine "«State-Machine»"
 ----
 +
 ----
-When trigger transition "«Trans-Name»" with "«Formula»" for state machine "«State-Machine»"
+When trigger transition "«Trans-Name»" for state machine "«State-Machine»" with "«Formula»"
 ----
 +
 Available as `triggerTransition(String transName, String smId, String formula)` method (parameters `smId` and `formula` are optional).
@@ -124,19 +248,19 @@ Available as `triggerTransition(String transName, String smId, String formula)` 
 * Check, if the given transition (optionally with the given parameters constraints) of the preset or given state machine is enabled.
 +
 ----
-Then transition "«Trans-Name»" is enabled
+Then is enabled transition "«Trans-Name»"
 ----
 +
 ----
-Then transition "«Trans-Name»" with "«Formula»" is enabled
+Then is enabled transition "«Trans-Name»" with "«Formula»"
 ----
 +
 ----
-Then transition "«Trans-Name»" is enabled for state machine "«State-Machine»"
+Then is enabled transition "«Trans-Name»" for state machine "«State-Machine»"
 ----
 +
 ----
-Then transition "«Trans-Name»" with "«Formula»" is enabled for state machine "«State-Machine»"
+Then is enabled transition "«Trans-Name»" for state machine "«State-Machine»" with "«Formula»"
 ----
 +
 Available as `isTransitionEnabled(String transName, String smId, String formula)` method (parameters `smId` and `formula` are optional).
@@ -145,19 +269,19 @@ Available as `isTransitionEnabled(String transName, String smId, String formula)
 * Check, if the given transition (optionally with the given parameters constraints) of the preset or given state machine is disabled.
 +
 ----
-Then transition "«Trans-Name»" is disabled
+Then is disabled transition "«Trans-Name»"
 ----
 +
 ----
-Then transition "«Trans-Name»" with "«Formula»" is disabled
+Then is disabled transition "«Trans-Name»" with "«Formula»"
 ----
 +
 ----
-Then transition "«Trans-Name»" is disabled for state machine "«State-Machine»"
+Then is disabled transition "«Trans-Name»" for state machine "«State-Machine»"
 ----
 +
 ----
-Then transition "«Trans-Name»" with "«Formula»" is disabled for state machine "«State-Machine»"
+Then is disabled transition "«Trans-Name»" for state machine "«State-Machine»" with "«Formula»"
 ----
 +
 Available as `isTransitionDisabled(String transName, String smId, String formula)` method (parameters `smId` and `formula` are optional).
@@ -182,101 +306,6 @@ Then state machine "«State-Machine»" is not in state "«State»"
 ----
 +
 Available as `isInState(String smId, String state, boolean not)` method (parameters `smId` and `not` are optional).
-
-
-== iUML-B Class Diagrams
-
-The class instance identification is the class name followed by the instance, separated by the colon (e.g. `ClassName:Instance`).
-
-* Preset the given class instance for subsequent steps.
-+
-----
-`Given class instance "«Class»"`
-----
-
-
-* Call the given method (optionally with the given parameters constraints) of the preset or given classs instance.
-+
-----
-When call method "«Method-Name»"
-----
-+
-----
-When call method "«Method-Name»" with "«Formula»"
-----
-+
-----
-When call method "«Method-Name»" for class instance "«Class»"
-----
-+
-----
-When call method "«Method-Name»" with "«Formula»" for class instance "«Class»"
-----
-+
-Available as `callMethod(methodName, classId, formula)` method (parameters `classId` and `formula` are optional)
-
-
-* Check, if the given method (optionally with the given parameters constraints) of the preset or given classs instance is enabled.
-+
-----
-Then method "«Method-Name»" is enabled
-----
-+
-----
-Then method "«Method-Name»" with "«Formula»" is enabled
-----
-+
-----
-Then method "«Method-Name»" is enabled for class instance "«Class»"
-----
-+
-----
-Then method "«Method-Name»" with "«Formula»" is enabled for class instance "«Class»"
-----
-+
-Available as `isMethodEnabled(methodName, classId, formula)` method (parameters `classId` and `formula` are optional).
-
-
-* Check, if the given method (optionally with the given parameters constraints) of the preset or given classs instance is disabled.
-+
-----
-Then method "«Method-Name»" is disabled
-----
-+
-----
-Then method "«Method-Name»" with "«Formula»" is disabled
-----
-+
-----
-Then method "«Method-Name»" is disabled for class instance "«Class»"
-----
-+
-----
-Then method "«Method-Name»" with "«Formula»" is disabled for class instance "«Class»"
-----
-+
-Available as `isMethodDisabled(methodName, classId, formula)` method (parameters `classId` and `formula` are optional).
-
-
-* Check, if the given attribute of the preset or given class instance has or has not the given value.
-+
-----
-Then attribute "«Attr-Name»" is "«Value»"
-----
-+
-----
-Then attribute "«Attr-Name»" is not "«Value»"
-----
-+
-----
-Then attribute "«Attr-Name»" of class instance "«Class»" is "«Value»"
-----
-+
-----
-Then attribute "«Attr-Name»" of class instance "«Class»" is not "«Value»"
-----
-+
-Available as `isAttribute(String classId, String attrName, String value, boolean not)` method (parameters `classId` and `not` are optional).
 
 
 == Restrictions

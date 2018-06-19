@@ -9,7 +9,11 @@ import static cucumber.api.groovy.EN.*
 import static cucumber.api.groovy.Hooks.*
 
 def quoted = /(?:"|')([^"']*)(?:"|')/
-
+def pair = /${quoted}\s*=\s*${quoted}/
+def comment = /(?:\s+#.*)?/
+def withOpt = /(?: with ${quoted})?/
+def forCI = /(?: for class instance ${quoted})?/
+def forSM = /(?: for state machine ${quoted})?/
 
 // Debug
 
@@ -21,42 +25,57 @@ And(~/^printState$/) { ->
 // Event-B
 
 // Setup constants (optionally with the given constants constraints) and initialize the machine.
-Given(~/^machine(?: with ${quoted})?$/) {
+Given(~/^machine${withOpt}${comment}$/) {
     String formula ->   // Parameter formula is optional
     setupConstantsInitialiseMachine(formula)
 }
 
-Given(~/^machine with$/) {
+Given(~/^machine with${comment}$/) {
     String formula ->
     setupConstantsInitialiseMachine(formula)
 }
 
 // Fire the given event (optionally with the given parameters constraints).
-When(~/^fire event ${quoted}(?: with ${quoted})?$/) {
+When(~/^fire event ${quoted}${withOpt}${comment}$/) {
     String eventName, String formula ->   // Parameter formula is optional
     fireEvent(eventName, formula)
 }
 
-When(~/^fire event ${quoted} with$/) {
-    DataTable table ->
+When(~/^fire event ${quoted} with ${pair}${comment}$/) {
+    String eventName, String attrName, List<String> values ->
+    fireEvents(eventName, attrName, values)
+}
+
+When(~/^fire event ${quoted} with${comment}$/) {
+    String eventName, DataTable table ->
     fireEvents(eventName, table.asMaps(String, String))
 }
 
 // Check if the given event (optionally with the given parameters constraints) is enabled.
-Then(~/^event ${quoted}(?: with ${quoted})? is enabled$/) {
+Then(~/^is enabled event ${quoted}${withOpt}${comment}$/) {
     String eventName, String formula ->   // Parameter formula is optional
     assert true == isEventEnabled(eventName, formula)
 }
 
+Then(~/^is enabled event ${quoted} with ${pair}${comment}$/) {
+    String eventName, String attrName, List<String> values ->
+    assert true == areEventsEnabled(eventName, attrName, values)
+}
+
 // Check if the given event (optionally with the given parameters constraints) is disabled.
-Then(~/^event ${quoted}(?: with ${quoted})? is disabled$/) {
+Then(~/^is disabled event ${quoted}${withOpt}${comment}$/) {
     String eventName, String formula ->   // Parameter formula is optional
     assert true == isEventDisabled(eventName, formula)
 }
 
+Then(~/^is disabled event ${quoted} with ${pair}${comment}$/) {
+    String eventName, String attrName, List<String> values ->
+    assert true == areEventsDisabled(eventName, attrName, values)
+}
+
 // Check if the given formula evaluates to the given value.
-Then(~/^formula ${quoted} is (FALSE|TRUE)$/) {
-    String formula, String value ->
+Then(~/^is (FALSE|TRUE) formula ${quoted}${comment}$/) {
+    String value, String formula ->
     assert true == isFormula(formula, value)
 }
 
@@ -64,31 +83,31 @@ Then(~/^formula ${quoted} is (FALSE|TRUE)$/) {
 // iUML-B Class Diagrams
 
 // Preset the given class instance for subsequent steps.
-Given(~/^class instance ${quoted}?$/) {
+Given(~/^class instance ${quoted}${comment}$/) {
     String classId ->
     givenClassId = classId
 }
 
 // Call the given method (optionally with the given parameters constraints) of the preset or given classs instance.
-When(~/^call method ${quoted}(?: with ${quoted})?(?: for class instance ${quoted})?$/) {
-    String methodName, String formula, String classId ->   // Parameter formula and classId are optional
+When(~/^call method ${quoted}${forCI}${withOpt}${comment}$/) {
+    String methodName, String classId, String formula ->   // Parameters classId and formula are optional
     callMethod(methodName, classId, formula)
 }
 
 // Check, if the given method (optionally with the given parameters constraints) of the preset or given classs instance is enabled.
-Then(~/^method ${quoted}(?: with ${quoted})? is enabled(?: for class instance ${quoted})?$/) {
-    String methodName, String formula, String classId ->   // Parameter formula and classId are optional
+Then(~/^is enabled method ${quoted}${forCI}${withOpt}${comment}$/) {
+    String methodName, String classId, String formula ->   // Parameters classId and formula are optional
     assert true == isMethodEnabled(methodName, classId, formula)
 }
 
 // Check, if the given method (optionally with the given parameters constraints) of the preset or given classs instance is disabled.
-Then(~/^method ${quoted}(?: with ${quoted})? is disabled(?: for class instance ${quoted})?$/) {
-    String methodName, String formula, String classId ->   // Parameter formula and classId are optional
+Then(~/^is disabled method ${quoted}${forCI}${withOpt}${comment}$/) {
+    String methodName, String classId, String formula ->   // Parameters classId and formula are optional
     assert true == isMethodDisabled(methodName, classId, formula)
 }
 
 // Check, if the given attribute of the given class instance has or has not the given value.
-Then(~/^attribute ${quoted}(?: of class instance ${quoted})? is( not)? ${quoted}$/) {
+Then(~/^attribute ${quoted}${forCI} is( not)? ${quoted}${comment}$/) {
     String attrName, String classId, String not, String value ->   // Parameters classId and not are optional
     assert true == isAttribute(classId, attrName, value, not != null)
 }
@@ -97,31 +116,31 @@ Then(~/^attribute ${quoted}(?: of class instance ${quoted})? is( not)? ${quoted}
 // iUML-B State Machines
 
 // Preset the given state machine for subsequent steps.
-Given(~/^state machine ${quoted}?$/) {
+Given(~/^state machine ${quoted}${comment}$/) {
     String smId ->
     givenSmId = smId
 }
 
 // Trigger the given transition (optionally with the given parameters constraints) of the given or preset state machine.
-When(~/^trigger transition ${quoted}(?: with ${quoted})?(?: for state machine ${quoted})?$/) {
-    String transName, String formula, String smId ->   // Parameters formula and smId are optional
+When(~/^trigger transition ${quoted}${forSM}${withOpt}${comment}$/) {
+    String transName, String smId, String formula ->   // Parameters smId and formula are optional
     triggerTransition(transName, smId, formula)
 }
 
 // Check, if the given transition (optionally with the given parameters constraints) of the given or preset state machine is enabled.
-Then(~/^transition ${quoted}(?: with ${quoted})? is enabled(?: for state machine ${quoted})?$/) {
-    String transName, String formula, String smId ->   // Parameters formula and smId are optional
+Then(~/^is enabled transition ${quoted}${forSM}${withOpt}${comment}$/) {
+    String transName, String smId, String formula ->   // Parameters smId and formula are optional
     assert true == isTransitionEnabled(transName, smId, formula)
 }
 
 // Check, if the given transition (optionally with the given parameters constraints) of the given or preset state machine is disabled.
-Then(~/^transition ${quoted}(?: with ${quoted})? is disabled(?: for state machine ${quoted})?$/) {
-    String transName, String formula, String smId ->   // Parameters formula and smId are optional
+Then(~/^is disabled transition ${quoted}${forSM}${withOpt}${comment}$/) {
+    String transName, String smId, String formula ->   // Parameters smId and formula are optional
     assert true == isTransitionDisabled(transName, smId, formula)
 }
 
 // Check, if the given or preset state machine is or is not in the given state.
-Then(~/^(?:state machine ${quoted} )?is( not)? in state ${quoted}$/) {
+Then(~/^(?:state machine ${quoted} )?is( not)? in state ${quoted}${comment}$/) {
     String smId, String not, String stateName ->   // Parameters smId and not are optional
     assert true == isInState(smId, stateName, not != null)
 }
@@ -163,6 +182,13 @@ public class World {
         state = trans.getDestination()
     }
 
+    void fireEvents(String eventName, String attrName, List<String> values) {
+        for (value in values) {
+            String formula = attrName + "=" + value;
+            fireEvent(eventName, formula)
+        }
+    }
+
     void fireEvents(String eventName, List<Map<String, String>> maps) {
         for (map in maps) {
             String formula = map.collect{it.key + "=" + it.value}.join(" & ")
@@ -175,9 +201,27 @@ public class World {
         return trans != null
     }
 
+    boolean areEventsEnabled(String eventName, String attrName, List<String> values) {
+        boolean result = true
+        for (value in values) {
+            String formula = attrName + "=" + value;
+            result &= isEventEnabled(eventName, formula)
+        }
+        return result
+    }
+
     boolean isEventDisabled(String eventName, String formula = null) {
         Transition trans = findUniqueTransition(eventName, formula)
         return trans == null
+    }
+
+    boolean areEventsDisabled(String eventName, String attrName, List<String> values) {
+        boolean result = true
+        for (value in values) {
+            String formula = attrName + "=" + value;
+            result &= isEventDisabled(eventName, formula)
+        }
+        return result
     }
 
     // Value can be a literal FALSE or TRUE
@@ -389,3 +433,4 @@ public class World {
         return false;
     }
 }
+

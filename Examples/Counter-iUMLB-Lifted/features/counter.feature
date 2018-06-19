@@ -16,10 +16,10 @@ Feature: Counter
   Scenario: Intial value
     Then attribute "counter" is "0"
     And is in state "CounterSM_stopped"
-    And transition 'start' is enabled
-    And transition 'stop' is disabled
-    And transition 'inc' is disabled
-    And transition 'dec' is disabled
+    And is enabled transition 'start'
+    And is disabled transition 'stop'
+    And is disabled transition 'inc'
+    And is disabled transition 'dec'
 
 
   Scenario: Start and stop
@@ -27,22 +27,22 @@ Feature: Counter
 
     When trigger transition 'start'
     Then is in state "CounterSM_started"
-    And transition 'start' is disabled
-    And transition 'stop' is enabled
-    And method 'inc' is enabled
-    And method 'dec' is disabled
-    And method 'add' with "num = 1" is enabled
-    But method 'add' with "num = 2" is disabled
-    And method 'sub' with "num = 1" is disabled
+    And is disabled transition 'start'
+    And is enabled transition 'stop'
+    And is enabled method 'inc'
+    And is disabled method 'dec'
+    And is enabled method 'add' with "num = 1"
+    But is disabled method 'add' with "num = 2"
+    And is disabled method 'sub' with "num = 1"
 
     When trigger transition 'stop'
     Then is in state "CounterSM_stopped"
-    And transition 'start' is enabled
-    And transition 'stop' is disabled
-    And method 'inc' is disabled
-    And method 'dec' is disabled
-    And method 'add' with "num = 1" is disabled
-    And method 'sub' with "num = 1" is disabled
+    And is enabled transition 'start'
+    And is disabled transition 'stop'
+    And is disabled method 'inc'
+    And is disabled method 'dec'
+    And is disabled method 'add' with "num = 1"
+    And is disabled method 'sub' with "num = 1"
 
 
   Scenario: Increment
@@ -51,13 +51,13 @@ Feature: Counter
     Given trigger transition 'start'
     When trigger transition 'inc'
     Then attribute "counter" is not "0"
-    And transition 'inc' is disabled
-    And transition 'dec' is enabled
+    And is disabled transition 'inc'
+    And is enabled transition 'dec'
 
     When trigger transition 'stop'
     Then attribute "counter" is not "0"
-    And transition 'inc' is disabled
-    And transition 'dec' is disabled
+    And is disabled transition 'inc'
+    And is disabled transition 'dec'
 
 
   Scenario: Decrement
@@ -67,13 +67,13 @@ Feature: Counter
     And trigger transition 'inc'
     When trigger transition 'dec'
     Then attribute "counter" is "0"
-    And transition 'inc' is enabled
-    And transition 'dec' is disabled
+    And is enabled transition 'inc'
+    And is disabled transition 'dec'
 
     When trigger transition 'stop'
     Then attribute "counter" is "0"
-    And transition 'inc' is disabled
-    And transition 'dec' is disabled
+    And is disabled transition 'inc'
+    And is disabled transition 'dec'
 
 
   Scenario: Reset stopped
@@ -115,3 +115,4 @@ Feature: Counter
     When call method 'sub' with "num = 1"
     And trigger transition 'stop'
     Then attribute "counter" is "0"
+

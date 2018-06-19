@@ -9,12 +9,12 @@ Feature: Counter
 
 
   Scenario: Intial value
-    Then formula "counter = 0" is TRUE
-    And event 'inc' is enabled
-    And event 'dec' is disabled
-    And event 'add' with "num = 1" is enabled
-    But event 'add' with "num = 2" is disabled
-    And event 'sub' with "num = 1" is disabled
+    Then is TRUE formula "counter = 0"
+    And is enabled event 'inc'
+    And is disabled event 'dec'
+    And is enabled event 'add' with "num = 1"
+    But is disabled event 'add' with "num = 2"
+    And is disabled event 'sub' with "num = 1"
 
 
   Scenario: Increment
@@ -50,11 +50,11 @@ Feature: Counter
     Add a value to the counter.
 
     When fire event 'add' with "num = 1"
-    Then formula "counter = 0" is FALSE
-    And formula "counter = 1" is TRUE
-    And event 'add' with "num = 1" is disabled
-    And event 'sub' with "num = 1" is enabled
-    But event 'sub' with "num = 2" is disabled
+    Then is FALSE formula "counter = 0"
+    And is TRUE formula "counter = 1"
+    And is disabled event 'add' with "num = 1"
+    And is enabled event 'sub' with "num = 1"
+    But is disabled event 'sub' with "num = 2"
 
 
   Scenario: Sub
@@ -62,7 +62,8 @@ Feature: Counter
 
     Given fire event 'inc'
     When fire event 'sub' with "num = 1"
-    Then formula "counter = 0" is TRUE
-    And event 'add' with "num = 1" is enabled
-    But event 'add' with "num = 2" is disabled
-    And event 'sub' with "num = 1" is disabled
+    Then is TRUE formula "counter = 0"
+    And is enabled event 'add' with "num = 1"
+    But is disabled event 'add' with "num = 2"
+    And is disabled event 'sub' with "num = 1"
+
