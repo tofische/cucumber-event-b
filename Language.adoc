@@ -190,6 +190,8 @@ Then is disabled method "«Method-Name»" for class instance "«Class»"
 Then is disabled method "«Method-Name»" for class instance "«Class»" with "«Formula»"
 ----
 +
+May also be used without the instance designator in order to check, if the method is disabled for all instances.
++
 Available as `isMethodDisabled(methodName, classId, formula)` method (parameters `classId` and `formula` are optional).
 
 
@@ -284,6 +286,8 @@ Then is disabled transition "«Trans-Name»" for state machine "«State-Machine�
 Then is disabled transition "«Trans-Name»" for state machine "«State-Machine»" with "«Formula»"
 ----
 +
+May also be used without the instance designator in order to check, if the method is disabled for all transitions.
++
 Available as `isTransitionDisabled(String transName, String smId, String formula)` method (parameters `smId` and `formula` are optional).
 
 
@@ -304,6 +308,8 @@ Then state machine "«State-Machine»" is in state "«State»"
 ----
 Then state machine "«State-Machine»" is not in state "«State»"
 ----
++
+Nested states are separated using the character '.' (e.g. "«State1».«State2»".
 +
 Available as `isInState(String smId, String state, boolean not)` method (parameters `smId` and `not` are optional).
 
