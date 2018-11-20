@@ -162,7 +162,7 @@ public class World {
 
     Api api = Main.getInjector().getInstance(Api.class)
     String eventb = System.getProperty("eventb")
-    StateSpace space = api.eventb_load(eventb) 
+    StateSpace space = api.eventb_load(eventb)
     State state
 
     void setupConstantsInitialiseMachine(String formula = null) {
@@ -356,39 +356,41 @@ public class World {
     }
 
     private iumlb_load() {
-        XmlParser parser = new XmlParser()
-        Node eventbNode = null // Parsed node corresponding to the tested refinement
-        String machineName = eventb
-        while (machineName != null) {
-            Node machineNode = parser.parse(machineName)
-            if (eventb == null) {
-                eventbNode = machineNode
-            }
-            for (node in machineNode.children()) {
-                if (node.name() == 'ac.soton.eventb.emf.core.extension.persistence.serialisedExtension') {
-                    def eClassifier = node.attribute('ac.soton.eventb.emf.core.extension.persistence.eClassifier')
-                    def ePackageURI = node.attribute('ac.soton.eventb.emf.core.extension.persistence.ePackageURI')
-                    def serialized = node.attribute('ac.soton.eventb.emf.core.extension.persistence.serialised')
-                    def serializedNode = parser.parseText(serialized)
-                    def nodeName = serializedNode.attribute('name')
-                    switch (eClassifier) {   // ePackageURI
-                        case "Classdiagram": // http://soton.ac.uk/models/eventb/classdiagrams/2015
-                            cdNodes << serializedNode
-                            break;
-                        case "Statemachine": // http://soton.ac.uk/models/eventb/statemachines/2014
-                            if (smNodes[nodeName] != null) {
-                                smNodes[nodeName] << serializedNode
-                                } else {
-                                smNodes[nodeName] = [serializedNode]
-                            }
-                            break;
-                    }
-                    // groovy.xml.XmlUtil.serialize(serializedNode, new FileWriter(nodeName + ".xml"))
+        def Node eventbNode = null // Parsed node corresponding to the tested refinement
+        if (!eventb.endsWith(".eventb")) {
+            XmlParser parser = new XmlParser()
+            String machineName = eventb
+            while (machineName != null) {
+                Node machineNode = parser.parse(machineName)
+                if (eventb == null) {
+                    eventbNode = machineNode
                 }
-            }
-            machineName = machineNode."org.eventb.core.refinesMachine"[0]?.attribute("org.eventb.core.target")
-            if (machineName != null) {
-                machineName += ".bum"
+                for (node in machineNode.children()) {
+                    if (node.name() == 'ac.soton.eventb.emf.core.extension.persistence.serialisedExtension') {
+                        def eClassifier = node.attribute('ac.soton.eventb.emf.core.extension.persistence.eClassifier')
+                        def ePackageURI = node.attribute('ac.soton.eventb.emf.core.extension.persistence.ePackageURI')
+                        def serialized = node.attribute('ac.soton.eventb.emf.core.extension.persistence.serialised')
+                        def serializedNode = parser.parseText(serialized)
+                        def nodeName = serializedNode.attribute('name')
+                        switch (eClassifier) {   // ePackageURI
+                            case "Classdiagram": // http://soton.ac.uk/models/eventb/classdiagrams/2015
+                                cdNodes << serializedNode
+                                break;
+                            case "Statemachine": // http://soton.ac.uk/models/eventb/statemachines/2014
+                                if (smNodes[nodeName] != null) {
+                                    smNodes[nodeName] << serializedNode
+                                    } else {
+                                    smNodes[nodeName] = [serializedNode]
+                                }
+                                break;
+                        }
+                        // groovy.xml.XmlUtil.serialize(serializedNode, new FileWriter(nodeName + ".xml"))
+                    }
+                }
+                machineName = machineNode."org.eventb.core.refinesMachine"[0]?.attribute("org.eventb.core.target")
+                if (machineName != null) {
+                    machineName += ".bum"
+                }
             }
         }
         return eventbNode
