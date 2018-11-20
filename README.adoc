@@ -73,5 +73,5 @@ _You can also load an Event-B context, but it makes little sense, as there is no
 
 * Execute `cucumber.sh <Event-B Machine file>.bum` and enjoy!
 +
-_The ProB always loads statically checked machine or context (*.bcm or *.bcc even if *.bum or *.buc has been specified), so make sure that the Rodin build succeeded. It is also possible to load the Event-B machine exported for use in ProB classic (*.eventb)._
+_The ProB always loads statically checked machine or context (`.bcm` or `.bcc` even if `.bum` or `.buc` has been specified), so make sure that the Rodin build succeeded. It is also possible to load the Event-B machine exported for use in ProB classic (`.eventb`)._
 
